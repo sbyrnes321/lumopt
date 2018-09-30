@@ -1,5 +1,6 @@
 ######## IMPORTS ########
 # General purpose imports
+from __future__ import division, print_function
 import numpy as np
 from lumopt.optimization import Super_Optimization, Optimization
 from lumopt.geometries.polygon import function_defined_Polygon

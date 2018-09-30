@@ -1,10 +1,11 @@
+from __future__ import division, print_function
 import lumopt.lumerical_methods.lumerical_scripts as ls
 from numpy import conj, pi
 import numpy as np
 from lumopt import CONFIG
 import sys
 from lumopt.figures_of_merit.field_intensities import FieldIntensities
-from fom import fom
+from lumopt.figures_of_merit.fom import fom
 from lumopt.utilities.fields import Fields
 
 
@@ -299,7 +300,7 @@ class ModeMatch3(ModeMatch2):
         pointfields=[fields.getfield(pos[0],pos[1],pos[2],self.wavelength) for pos in self.positions]
 
         prefactor=1#eps0#*omega
-        #print prefactor
+        #print(prefactor)
         sum_of_pointfields=sum([pointfield*phase_factor for pointfield,phase_factor in zip(pointfields,self.phase_factors)])
         prefactor=np.conj(sum_of_pointfields)
         adjoint_sources=[prefactor*phase_factor for phase_factor in self.phase_factors]

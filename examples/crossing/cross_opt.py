@@ -1,4 +1,5 @@
 ######## IMPORTS ########
+from __future__ import division, print_function
 import numpy as np
 
 from lumopt.figures_of_merit.modematch import ModeMatch

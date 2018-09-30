@@ -1,6 +1,6 @@
-
 ######## IMPORTS ########
 # General purpose imports
+from __future__ import division, print_function
 import numpy as np
 import os
 import scipy
@@ -20,8 +20,8 @@ from lumopt.utilities.materials import Material
 script = load_from_lsf(os.path.join(CONFIG['root'], 'examples/grating/grating_base_continuous.lsf'))
 
 ######## DEFINE OPTIMIZABLE GEOMETRY ########
-x_points=18000/20
-y_points=220/20
+x_points=int(18000/20)
+y_points=int(220/20)
 
 eps=np.ones((x_points,y_points))*3.4**2
 geometry = ContinousEpsilon2D(eps=eps,x=np.linspace(0,18e-6,x_points),y=np.linspace(0,0.22e-6,y_points))

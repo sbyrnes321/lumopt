@@ -1,3 +1,4 @@
+from __future__ import division, print_function
 import numpy as np
 from scipy.integrate import dblquad,nquad
 from lumopt.utilities.scipy_wrappers import dblsimps, wrapped_GridInterpolator
@@ -50,7 +51,7 @@ class Gradient_fields(object):
         :returns: gradient_field(x,y,z,wl), a function that returns the derivative of the fom wrt epsilon in space'''
 
         def gradient_field(x,y,z,wl,real=True):
-            #print 'x={} y={}'.format(x,y)
+            #print('x={} y={}'.format(x,y))
             if real:
                 return sum(2*eps0* np.real(self.forward_fields.getfield(x,y,z,wl)*self.adjoint_fields.getfield(x,y,z,wl))) #Eq 5.28 of O. Miller's thesis
             else:

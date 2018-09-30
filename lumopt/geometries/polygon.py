@@ -1,4 +1,5 @@
-from geometry import Geometry
+from __future__ import division, print_function
+from lumopt.geometries.geometry import Geometry
 import numpy as np
 from lumopt.utilities.edge import Edge
 import scipy
@@ -74,8 +75,8 @@ class Polygon(Geometry):
         gradient_pairs_edges=[]
         for edge in self.edges:
             gradient_pairs_edges.append(edge.derivative(gradient_fields,wavelength,n_points=self.edge_precision,real=real))
-            print '.',
-        print ''
+            print('.',end=' ')
+        print()
         #the gradients returned for an edge derivative are the gradients with respect to moving each end point perpendicular to that edge
         #This is not exactly what we are looking for here, since we want the derivative w/ respect to moving each point
         #in the x or y direction, so coming up is a lot of projections...

@@ -1,5 +1,6 @@
+from __future__ import division, print_function
 import lumopt.lumerical_methods.lumerical_scripts as ls
-from fom import fom
+from lumopt.figures_of_merit.fom import fom
 import numpy as np
 import lumapi
 
@@ -46,7 +47,7 @@ class FieldIntensity(fom):
         field = self.fields
         pointfield = field.getfield(field.x[0], field.y[0], field.z[0], self.wavelengths[0])
 
-        # print prefactor
+        # print(prefactor)
         adjoint_source = np.conj(pointfield)
 
         ls.add_dipole(sim.fdtd, field.x[0], field.y[0], field.z[0], self.wavelengths[0], adjoint_source)
@@ -122,7 +123,7 @@ class FieldIntensities(fom):
 
 
         prefactor=1#eps0#*omega
-        #print prefactor
+        #print(prefactor)
         if self.weight_amplitudes is None:
             adjoint_sources=[prefactor*np.conj(pointfield) for pointfield in pointfields]
         else:

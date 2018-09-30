@@ -1,3 +1,4 @@
+from __future__ import division, print_function
 import lumopt.lumerical_methods.lumerical_scripts as ls
 from numpy import conj,pi
 

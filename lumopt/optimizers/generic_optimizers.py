@@ -1,3 +1,4 @@
+from __future__ import division, print_function
 import numpy as np
 import scipy.optimize as sci
 import copy
@@ -301,7 +302,7 @@ class ScipyOptimizers(Optimizer):
 
     def run(self,verbose=True):
         print('Running Scipy Optimizer')
-        print 'bounds= {}'.format(self.bounds)
-        print 'start= {}'.format(self.start_point)
+        print('bounds= {}'.format(self.bounds))
+        print('start= {}'.format(self.start_point))
         res= sci.minimize(fun=self.callable_fom,x0=self.start_point,jac=self.callable_jac,bounds=self.bounds,callback=self.callback,options={'maxiter':self.max_iter,'disp':True,'gtol':self.pgtol},method=self.method)
         return res

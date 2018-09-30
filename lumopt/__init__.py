@@ -1,3 +1,4 @@
+from __future__ import division, print_function
 import inspect, os
 import pathlib
 
@@ -7,6 +8,6 @@ root=pathlib.Path(*here.parts[:-1])
 CONFIG={}
 #CONFIG['fdtd_path']="/Applications/Lumerical/FDTD Solutions/FDTD Solutions.app/Contents/API/Python"
 CONFIG['root']=str(root.absolute())
-print 'CONFIGURATION FILE {}'.format(CONFIG)
+print('CONFIGURATION FILE {}'.format(CONFIG))
 
 ## Geeze this seems awefully complicated, is there no other way to do it better??

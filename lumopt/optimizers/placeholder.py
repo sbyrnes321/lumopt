@@ -1,3 +1,4 @@
+from __future__ import division, print_function
 
 class placeholder_optimizer(object):
 

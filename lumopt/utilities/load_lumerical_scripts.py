@@ -1,3 +1,4 @@
+from __future__ import division, print_function
 def load_from_lsf(script_file_name):
     '''
     A very simple function that can load an lsf file and reformats it to work with this code.

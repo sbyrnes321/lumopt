@@ -1,3 +1,4 @@
+from __future__ import division, print_function
 import numpy as np
 from lumopt.utilities.scipy_wrappers import trapz1D,trapz3D,trapz2D
 

@@ -1,3 +1,4 @@
+from __future__ import division, print_function
 from lumopt.utilities.fields import Fields, FieldsNoInterp
 import numpy as np
 
@@ -44,7 +45,7 @@ def get_fields_no_interp(fdtd, monitor_name, get_eps=False, get_D=False, get_H=F
     For the fields used to create gradients, the D component of the field and the refractive index also need to be fetched.
     For the fields on figure of merit monitors, D  or index does not need to be fetched
     It returns a Field object'''
-    #print 'getting raw fields for {}'.format(monitor_name)
+    #print('getting raw fields for {}'.format(monitor_name))
     # script="m='{}';".format(monitor_name)
     # script+="x = getdata(m,'x');"\
     #         "y = getdata(m,'y');"\
@@ -114,7 +115,7 @@ def get_fields_interp(fdtd, monitor_name, get_eps=False, get_D=False, get_H=Fals
     For the fields used to create gradients, the D component of the field and the refractive index also need to be fetched.
     For the fields on figure of merit monitors, D  or index does not need to be fetched
     It returns a Field object'''
-    #print 'getting interpolated fields for {}'.format(monitor_name)
+    #print('getting interpolated fields for {}'.format(monitor_name))
     fields = fdtd.getresult(monitor_name,'E')
     fields_eps = fdtd.getresult(monitor_name + '_D_index','eps')['eps'] if get_eps else None
     fields_D = fdtd.getresult(monitor_name + '_D_index','D')['D'] if get_D else None
@@ -219,7 +220,7 @@ def copy_properties(fdtd,origin,destination,properties= ['x', 'y', 'z', 'x_span'
         try:
             dest.__setattr__(thing.replace(' ','_'), orig.__getattr__(thing.replace(' ','_')))
         except:
-            print 'Could not copy {} from {} to {} '.format(thing,origin,destination)
+            print('Could not copy {} from {} to {} '.format(thing,origin,destination))
 
 def set_injection_axis(fdtd,source_name):
     src = fdtd.getObjectById(source_name)

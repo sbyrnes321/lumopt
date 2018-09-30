@@ -1,8 +1,9 @@
+from __future__ import division, print_function
 import lumopt.lumerical_methods.lumerical_scripts as ls
 import numpy as np
 from lumopt import CONFIG
 import sys
-from fom import fom
+from lumopt.figures_of_merit.fom import fom
 from lumopt.utilities.fields import Fields
 
 
@@ -157,9 +158,9 @@ if __name__ == '__main__':
     # # calculate the gradient using the adjoint solve
     # opt.run_adjoint_solves()
     # calculated_gradients = np.array(opt.calculate_gradients())
-    # print calculated_gradients
+    # print(calculated_gradients)
     # n_derivatives = 4
     # finite_difference_gradients = opt.calculate_finite_differences_gradients(n_derivatives=n_derivatives, dx=5e-9,
     #                                                                          central=True, print_res=True)
     #
-    # print finite_difference_gradients
+    # print(finite_difference_gradients)

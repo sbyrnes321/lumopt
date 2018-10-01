@@ -111,7 +111,7 @@ class FixedStepGradientDescent(Optimizer):
         :param max_dx: Maximum allowed change of a parameter per iteration
         :param max_iter: Maximum number of iterations to run
         :param all_params_equal: If true, all parameters will be changed by +/- dx depending on the sign of their associated
-        shape derivative.
+                                 shape derivative.
         :param noise_magnitude: The amplitude of the noise
         :param scaling_factor: Scaling factor to bring the optimization variables closer to 1
 
@@ -185,7 +185,7 @@ class Adaptive_Gradient_Descent(FixedStepGradientDescent):
         :param dx_regrowth_factor: by how much dx will be increased at each iteration
         :param max_iter: Maximum number of iterations to run
         :param all_params_equal: If true, all parameters will be changed by +/- dx depending on the sign of their associated
-        shape derivative.
+                                 shape derivative.
         :param noise_magnitude: The amplitude of the noise
         :param scaling_factor: Scaling factor to bring the optimization variables closer to 1
         '''
@@ -255,9 +255,9 @@ class Adaptive_Gradient_Descent(FixedStepGradientDescent):
 
 class ScipyOptimizers(Optimizer):
     '''Using scipy's optimizers to perform the optimizations. Some of the algorithms (L-BFGS-G in particular) can approximate
-    the Hessian from the different optimization steps (also called Quasi-Newton Optimization). While this is very powerfull,
+    the Hessian from the different optimization steps (also called Quasi-Newton Optimization). While this is very powerful,
     the derivatives calculated here using a continuous adjoint method can be noisy, which in turn can lead to poor behavior of
-    these Quasi-Newton methods, which expect machine precision derivatices. Therefore these methods are to be used with some caution.
+    these Quasi-Newton methods, which expect machine precision derivatives. Therefore these methods are to be used with some caution.
 
     Checkout documentation of different optimization methods at  :meth:`scipy.optimize.minimize`
 

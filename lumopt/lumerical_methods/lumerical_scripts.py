@@ -11,7 +11,7 @@ def get_source_power(fdtd, wl=1550e-9):
     return source_power
 
 def add_point_monitor(fdtd,monitor_name,position):
-    '''This script adds a point monitor in a simulation'''
+    '''Adds a point monitor to a simulation'''
     script = "addpower;" \
              "set('name','{}');" \
              "set('monitor type','Point');" \
@@ -21,7 +21,7 @@ def add_point_monitor(fdtd,monitor_name,position):
     fdtd.eval(script)
 
 def add_point_monitor_script(monitor_name,position):
-    '''This script adds a point monitor in a simulation'''
+    '''Returns a Lumerical script which, when executed, adds a point monitor to a simulation'''
     script = "addpower;" \
              "set('name','{}');" \
              "set('monitor type','Point');" \
@@ -241,7 +241,7 @@ def add_index_monitors_to_fields_monitors(fdtd, monitor_name):
 
 
 def add_D_monitors_to_fields_monitors(fdtd, monitor_name):
-    '''Adds an index monitor with the same size as a given field monitor'''
+    '''Adds a D-field monitor with the same size as a given field monitor'''
     index_monitor_name = monitor_name + '_D_index'
     fdtd.eval('addobject("displacement_field_adv"); set("name","{}");'.format(index_monitor_name))
     things_to_set = ['x', 'y', 'z', 'x span', 'y span', 'z span']

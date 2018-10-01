@@ -4,7 +4,7 @@ def load_from_lsf(script_file_name):
     Effectively it strips out all comments from the file, because the comments don't play well with lumapi
 
     :param script_file_name: Just the name of the script
-    :return:
+    :return: The reformatted script, as a Python string
     '''
 
     with open(script_file_name, 'rb') as text_file:

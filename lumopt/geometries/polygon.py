@@ -17,7 +17,7 @@ class Polygon(Geometry):
 
 
     :param points:
-        The points are defined as a numpy array of tupple coordinates np.array([(x0,y0),...,(xn,yn)]). THEY MUST BE DEFINED IN A
+        The points are defined as a numpy array of tuple coordinates np.array([(x0,y0),...,(xn,yn)]). THEY MUST BE DEFINED IN A
         COUNTER CLOCKWISE DIRECTION.
     :param z:
         The center of the polygon along the z axis
@@ -25,10 +25,10 @@ class Polygon(Geometry):
         The depth of the extrusion in the z direction (in meters)
     :param eps_out:
         The permittivity of the outer-material (square of refractive index), or the name of a Lumerical Material, from which the permittivity
-        will be extracted. Can also be a Material object from :class:`lumpot.utilities.materials.Material` with a defined mesh order.
+        will be extracted. Can also be a Material object from :class:`lumopt.utilities.materials.Material` with a defined mesh order.
     :param eps_in:
         The permittivity of the inner-material (square of refractive index), or the name of a Lumerical Material, from which the permittivity
-        will be extracted. Can also be a Material object from :class:`lumpot.utilities.materials.Material` with a defined mesh order.
+        will be extracted. Can also be a Material object from :class:`lumopt.utilities.materials.Material` with a defined mesh order.
     :param edge_precision:
         The edges will be discretized when calculating the gradients with respect to moving different points of the geometry. This parmeter
         will define the number of discretization points per edge. It is strongly recommended to have at least a few points per mesh cell.
@@ -178,7 +178,7 @@ class function_defined_Polygon(Polygon):
     :param func:
         A function that takes as input a list of optimization parameters and returns a list of point coordinates forming
         the polygon to optimize. See example :func:`~lumpot.geometries.polygon.taper_splitter`.
-        The points are defined as a numpy array of tupple coordinates np.array([(x0,y0),...,(xn,yn)]).
+        The points are defined as a numpy array of tuple coordinates np.array([(x0,y0),...,(xn,yn)]).
         THEY MUST BE DEFINED IN A COUNTER CLOCKWISE DIRECTION.
     :param initial_params:
         The initial parameters, which when fed to the previously defined function, will generate the starting geometry of

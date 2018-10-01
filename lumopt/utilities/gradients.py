@@ -45,7 +45,7 @@ class Gradient_fields(object):
 
     def def_sparse_function(self):
         '''Creates a function that simply returns the derivative of the figure of merit against the permittivity at one point in space.
-        For the moment this is at a single waveglength
+        For the moment this is at a single wavelength
 
         :returns: gradient_field(x,y,z,wl), a function that returns the derivative of the fom wrt epsilon in space'''
 

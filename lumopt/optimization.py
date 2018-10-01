@@ -59,7 +59,7 @@ class Super_Optimization(object):
 
 
     def run(self, verbose=True):
-        '''Inititalizes and then runs the optimization
+        '''Initializes and then runs the optimization
 
         :param verbose: Defines how verbose the optimization should be'''
 

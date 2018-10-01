@@ -15,10 +15,10 @@ eps0=8.854187e-12
 
 
 class Fields(object):
-    '''This object is created from fields loaded from Lumerical m=field monitors. Several iterpolation objects are then created internally to
-    enable the easy access of the fields in the simulation space
+    '''This object is created from fields loaded from Lumerical field monitors. Several interpolation objects are then created internally to
+    enable easy access to the fields in the simulation space
 
-    Use :method:`~lumopt.lumerical_methods.lumerical_scripts.get_fields` to load the data properly'''
+    Use :method:`lumopt.lumerical_methods.lumerical_scripts.get_fields` to load the data properly'''
 
     def __init__(self,x,y,z,wl,E,D,eps,H):
 
@@ -71,9 +71,9 @@ class Fields(object):
 
 
     def calculate_pointing_vect(self):
-        '''Calculates the pointing vector and creates an array of it'''
+        '''Calculates the Poynting vector and creates an array of it'''
         if self.E is None or self.H is None:
-            return ValueError('Either E or H data is missing in the field, cannot calculate pointing vector')
+            return ValueError('Either E or H data is missing in the field, cannot calculate Poynting vector')
 
 
         pointing_vect=np.zeros(self.E.shape,dtype=np.complex_)
@@ -87,8 +87,8 @@ class Fields(object):
         return self.pointing_vect
 
     def calculate_power(self):
-        '''Calculates the pointing Vector integral of a field for a linear or 2D field monitor, to figure out how much
-        power is flowing trought the monitor'''
+        '''Calculates the Poynting Vector integral of a field for a linear or 2D field monitor, to figure out how much
+        power is flowing through the monitor'''
 
         self.calculate_pointing_vect()
         if len(self.x) == 1:
@@ -136,8 +136,8 @@ class Fields(object):
 
     def normalize_power(self,plot=False):
 
-        ''''This is primarily if one wants to do mode overlaps.
-        It normalizeds the power travelling in the mode through a plane, at every wavelength
+        '''This is primarily if one wants to do mode overlaps.
+        It normalizes the power travelling in the mode through a plane, at every wavelength
         '''
         power=self.calculate_power()
         self.normalize_to_power(power)

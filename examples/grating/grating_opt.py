@@ -29,7 +29,7 @@ n_grates=22
 def grate_function_generator(grate_number,grate_height=70e-9,grate_center_y=220e-9-35e-9):
     def grate_function(params):
         grate_position=params[grate_number]
-        grate_width=params[grate_number+len(params)/2]
+        grate_width=params[grate_number+int(len(params)/2)]
         left=grate_position-grate_width/2
         right=grate_position+grate_width/2
         top=grate_center_y+grate_height/2
